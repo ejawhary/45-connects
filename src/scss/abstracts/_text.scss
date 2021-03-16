@@ -1,0 +1,11 @@
+@use './colours' as *;
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap');
+
+.black-text {
+	color: $black;
+}
+
+.red-text {
+	color: $red;
+}
