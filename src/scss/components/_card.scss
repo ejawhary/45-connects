@@ -1,4 +1,6 @@
-@use '../abstracts/' as *;
+@import '../abstracts/colours';
+@import '../abstracts/mixins';
+@import '../abstracts/text';
 
 .card-container {
 	width: calc(192px * 0.5);

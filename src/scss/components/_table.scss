@@ -1,8 +1,10 @@
-@use '../abstracts/' as *;
+@import '../abstracts/colours';
+@import '../abstracts/mixins';
+@import '../abstracts/text';
 
 .table-container {
-	width: 50%;
-	height: 700px;
+	width: 60%;
+	height: 80vh;
 	border: 10px solid $black;
 	border-radius: 200px;
 	user-select: none;

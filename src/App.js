@@ -1,11 +1,13 @@
 import { Fragment } from 'react';
-import CardFront from './components/assets/cards/CardFront';
+import Table from './components/assets/table/Table';
 import './App.scss';
 
 const App = () => {
 	return (
 		<Fragment>
-			<CardFront />
+			<div className="container">
+				<Table />
+			</div>
 		</Fragment>
 	);
 };
