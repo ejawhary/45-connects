@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-const CardFront = () => {
+const CardFront = ({ value, suit }) => {
 	return (
-		<>
-			<div class="card-container">
-				<div class="card black-text" data-value="A♠">
-					<div class="center-suits">
-						<div class="suit suit1">♠</div>
-						<div class="suit suit2">♠</div>
-						<div class="suit suit3">♠</div>
-						<div class="suit suit4">♠</div>
-						<div class="suit suit5">♠</div>
-						<div class="suit suit6">♠</div>
-						<div class="suit suit7">♠</div>
+		<Fragment>
+			<div className="card-container">
+				<div
+					className={`card ${
+						suit === '♣' || suit === '♠' ? 'black-text' : 'red-text'
+					}`}
+					data-value={value + suit}
+				>
+					<div className="center-suits">
+						<div className="suit suit1">{suit}</div>
+						<div className="suit suit2">{suit}</div>
+						<div className="suit suit3">{suit}</div>
+						<div className="suit suit4">{suit}</div>
+						<div className="suit suit5">{suit}</div>
+						<div className="suit suit6">{suit}</div>
+						<div className="suit suit7">{suit}</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</Fragment>
 	);
 };
 

@@ -15,9 +15,13 @@ body {
 	font-family: 'Lobster Two', cursive;
 }
 
+#root {
+	height: 100vh;
+}
+
 .container {
 	width: 100%;
-	min-height: inherit;
+	height: 100%;
 	@include flex-Center;
 	grid-gap: 1.5rem;
 }

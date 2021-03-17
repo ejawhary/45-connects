@@ -3,8 +3,8 @@
 @import '../abstracts/text';
 
 .table-container {
-	width: 60%;
-	height: 80vh;
+	width: 70%;
+	height: 70vh;
 	border: 10px solid $black;
 	border-radius: 200px;
 	user-select: none;
@@ -25,12 +25,12 @@
 			grid-row: 3/5;
 
 			h1 {
-				font-size: 6rem;
+				font-size: 5rem;
 				margin-bottom: -20px;
 			}
 
 			h2 {
-				font-size: 4rem;
+				font-size: 3rem;
 				font-style: italic;
 			}
 		}
