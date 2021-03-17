@@ -1,0 +1,56 @@
+.webcam1 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	video {
+		height: 200px;
+		width: 200px;
+		object-position: top left;
+		object-fit: cover;
+		z-index: 100;
+		border-top-right-radius: 50px;
+	}
+}
+.webcam2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	video {
+		height: 200px;
+		width: 200px;
+		object-position: top left;
+		object-fit: cover;
+		z-index: 100;
+		border-bottom-right-radius: 50px;
+	}
+}
+.webcam3 {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	video {
+		height: 200px;
+		width: 200px;
+		object-position: top left;
+		object-fit: cover;
+		z-index: 100;
+		border-bottom-left-radius: 50px;
+	}
+}
+.webcam4 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	video {
+		height: 200px;
+		width: 200px;
+		object-position: top left;
+		object-fit: cover;
+		z-index: 100;
+		border-top-left-radius: 50px;
+	}
+}

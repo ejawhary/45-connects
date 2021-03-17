@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
-const CardFront = ({ value, suit }) => {
+const CardFront = ({ value, suit, player1 }) => {
 	return (
 		<Fragment>
-			<div className="card-container">
+			<div className={`card-container card-container-front`}>
 				<div
+					onClick={console.log('click')}
 					className={`card ${
 						suit === '♣' || suit === '♠' ? 'black-text' : 'red-text'
 					}`}
