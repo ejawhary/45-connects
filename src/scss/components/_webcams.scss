@@ -6,7 +6,7 @@
 	video {
 		height: 200px;
 		width: 200px;
-		object-position: top left;
+		object-position: center;
 		object-fit: cover;
 		z-index: 100;
 		border-top-right-radius: 50px;
@@ -34,7 +34,7 @@
 	video {
 		height: 200px;
 		width: 200px;
-		object-position: top left;
+		object-position: top center;
 		object-fit: cover;
 		z-index: 100;
 		border-bottom-left-radius: 50px;
@@ -48,7 +48,7 @@
 	video {
 		height: 200px;
 		width: 200px;
-		object-position: top left;
+		object-position: top right;
 		object-fit: cover;
 		z-index: 100;
 		border-top-left-radius: 50px;

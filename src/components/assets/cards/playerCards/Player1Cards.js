@@ -2,38 +2,140 @@ import React, { useState } from 'react';
 import CardFront from '../CardFront';
 
 const Player1Cards = () => {
-	const [hand, setHand] = useState([
+	const initialState = [
 		{
-			id: 1,
+			id: 0,
 			value: '2',
 			suit: '♣',
 			player1: true,
+			raise: false,
 		},
 		{
-			id: 2,
+			id: 1,
 			value: '7',
 			suit: '♦',
 			player1: true,
+			raise: false,
 		},
 		{
-			id: 3,
+			id: 2,
 			value: '9',
 			suit: '♠',
 			player1: true,
+			raise: false,
 		},
 		{
-			id: 4,
+			id: 3,
 			value: 'K',
 			suit: '♥',
 			player1: true,
+			raise: false,
 		},
 		{
-			id: 5,
+			id: 4,
 			value: 'A',
 			suit: '♣',
 			player1: true,
+			raise: false,
 		},
-	]);
+	];
+
+	const [hand, setHand] = useState(initialState);
+
+	const clicked = (e) => {
+		let clickedValue;
+		let clickedSuit;
+
+		if (e.target.classList.contains('suit')) {
+			clickedValue =
+				e.target.parentElement.parentElement.attributes[1].value[0];
+			clickedSuit =
+				e.target.parentElement.parentElement.attributes[1].value[1];
+		}
+
+		if (e.target.classList.contains('card')) {
+			clickedValue = e.target.attributes[1].value[0];
+			clickedSuit = e.target.attributes[1].value[1];
+		}
+
+		if (e.target.classList.contains('suit')) {
+			hand.forEach((card) => {
+				if (card.value === clickedValue && card.suit === clickedSuit) {
+					let tempHand = [...hand];
+					let tempCard = { ...card };
+					tempCard.raise = !tempCard.raise;
+					tempHand[card.id] = tempCard;
+					setHand(tempHand);
+				}
+			});
+		}
+
+		if (e.target.classList.contains('card')) {
+			hand.forEach((card) => {
+				if (card.value === clickedValue && card.suit === clickedSuit) {
+					let tempHand = [...hand];
+					let tempCard = { ...card };
+					tempCard.raise = !tempCard.raise;
+					tempHand[card.id] = tempCard;
+					setHand(tempHand);
+				}
+			});
+		}
+	};
+
+	// let tempHand = [...hand];
+	// let tempCard = { ...card };
+	// tempCard.raise = !tempCard.raise;
+	// tempHand[card.id] = tempCard;
+	// setHand(tempHand);
+
+	// const clicked = (e) => {
+	// 	hand.forEach((card) => {
+	// 		if (e.target.classList.contains('suit')) {
+	// 			if (
+	// 				e.target.parentElement.parentElement.attributes[1]
+	// 					.value[0] === card.value &&
+	// 				e.target.parentElement.parentElement.attributes[1]
+	// 					.value[1] === card.suit
+	// 			) {
+	// 				let tempHand = [...hand];
+	// 				let tempCard = { ...card };
+	// 				tempCard.raise = !tempCard.raise;
+	// 				tempHand[card.id] = tempCard;
+	// 				setHand(tempHand);
+	// 			} else {
+	// 				// let tempHand = [...hand];
+	// 				// let tempCard = { ...card };
+	// 				// tempCard.raise = false;
+	// 				// tempHand[card.id] = tempCard;
+	// 				// setHand(tempHand);
+	// 			}
+	// 		} else if (e.target.classList.contains('card')) {
+	// 			if (
+	// 				e.target.attributes[1].value[0] === card.value &&
+	// 				e.target.attributes[1].value[1] === card.suit
+	// 			) {
+	// 				let tempHand = [...hand];
+	// 				let tempCard = { ...card };
+	// 				tempCard.raise = !tempCard.raise;
+	// 				tempHand[card.id] = tempCard;
+	// 				setHand(tempHand);
+	// 			} else {
+	// 				// let tempHand = [...hand];
+	// 				// let tempCard = { ...card };
+	// 				// tempCard.raise = false;
+	// 				// tempHand[card.id] = tempCard;
+	// 				// setHand(tempHand);
+	// 			}
+	// 		} else {
+	// 			let tempHand = [...hand];
+	// 			let tempCard = { ...card };
+	// 			tempCard.raise = false;
+	// 			tempHand[card.id] = tempCard;
+	// 			setHand(tempHand);
+	// 		}
+	// 	});
+	// };
 
 	return (
 		<div className="player1Cards">
@@ -42,6 +144,8 @@ const Player1Cards = () => {
 					value={card.value}
 					suit={card.suit}
 					player1={card.player1}
+					raise={card.raise}
+					onClick={clicked}
 					key={card.id}
 				/>
 			))}
