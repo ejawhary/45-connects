@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
+import FacebookBtn from './FacebookBtn';
 
 const Login = () => {
 	const responseFacebook = async (response) => {
@@ -23,13 +24,7 @@ const Login = () => {
 				<span style={{ display: 'block' }}>connects</span>
 			</h1>
 			<button></button>
-			<FacebookLogin
-				appId="913536599480262"
-				autoLoad={true}
-				fields="name,email,picture"
-				callback={responseFacebook}
-			/>
-			,
+			<FacebookBtn />
 		</div>
 	);
 };

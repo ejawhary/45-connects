@@ -1,1 +1,4 @@
-export const SET_RAISE = 'SET_RAISE';
+export const FACEBOOK_LOGIN = 'FACEBOOK_LOGIN';
+export const FACEBOOK_LOGOUT = 'FACEBOOK_LOGOUT';
+export const GOOGLE_LOGIN = 'GOOGLE_LOGIN';
+export const GOOGLE_LOGOUT = 'GOOGLE_LOGOUT';
