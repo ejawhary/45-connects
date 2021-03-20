@@ -83,60 +83,6 @@ const Player1Cards = () => {
 		}
 	};
 
-	// let tempHand = [...hand];
-	// let tempCard = { ...card };
-	// tempCard.raise = !tempCard.raise;
-	// tempHand[card.id] = tempCard;
-	// setHand(tempHand);
-
-	// const clicked = (e) => {
-	// 	hand.forEach((card) => {
-	// 		if (e.target.classList.contains('suit')) {
-	// 			if (
-	// 				e.target.parentElement.parentElement.attributes[1]
-	// 					.value[0] === card.value &&
-	// 				e.target.parentElement.parentElement.attributes[1]
-	// 					.value[1] === card.suit
-	// 			) {
-	// 				let tempHand = [...hand];
-	// 				let tempCard = { ...card };
-	// 				tempCard.raise = !tempCard.raise;
-	// 				tempHand[card.id] = tempCard;
-	// 				setHand(tempHand);
-	// 			} else {
-	// 				// let tempHand = [...hand];
-	// 				// let tempCard = { ...card };
-	// 				// tempCard.raise = false;
-	// 				// tempHand[card.id] = tempCard;
-	// 				// setHand(tempHand);
-	// 			}
-	// 		} else if (e.target.classList.contains('card')) {
-	// 			if (
-	// 				e.target.attributes[1].value[0] === card.value &&
-	// 				e.target.attributes[1].value[1] === card.suit
-	// 			) {
-	// 				let tempHand = [...hand];
-	// 				let tempCard = { ...card };
-	// 				tempCard.raise = !tempCard.raise;
-	// 				tempHand[card.id] = tempCard;
-	// 				setHand(tempHand);
-	// 			} else {
-	// 				// let tempHand = [...hand];
-	// 				// let tempCard = { ...card };
-	// 				// tempCard.raise = false;
-	// 				// tempHand[card.id] = tempCard;
-	// 				// setHand(tempHand);
-	// 			}
-	// 		} else {
-	// 			let tempHand = [...hand];
-	// 			let tempCard = { ...card };
-	// 			tempCard.raise = false;
-	// 			tempHand[card.id] = tempCard;
-	// 			setHand(tempHand);
-	// 		}
-	// 	});
-	// };
-
 	return (
 		<div className="player1Cards">
 			{hand.map((card) => (
