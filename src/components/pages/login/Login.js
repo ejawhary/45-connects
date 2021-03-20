@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login';
 import FacebookBtn from './FacebookBtn';
+import GoogleBtn from './GoogleBtn';
+import EmailLogin from './EmailLogin';
 
 const Login = () => {
 	const responseFacebook = async (response) => {
@@ -23,8 +24,9 @@ const Login = () => {
 				<span style={{ display: 'block' }}>45</span>
 				<span style={{ display: 'block' }}>connects</span>
 			</h1>
-			<button></button>
+			<GoogleBtn style={{ width: '400px' }} />
 			<FacebookBtn />
+			<EmailLogin />
 		</div>
 	);
 };
