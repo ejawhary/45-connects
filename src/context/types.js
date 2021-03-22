@@ -1,4 +1,4 @@
-export const FACEBOOK_LOGIN = 'FACEBOOK_LOGIN';
-export const FACEBOOK_LOGOUT = 'FACEBOOK_LOGOUT';
-export const GOOGLE_LOGIN = 'GOOGLE_LOGIN';
-export const GOOGLE_LOGOUT = 'GOOGLE_LOGOUT';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const SET_LOGGEDIN = 'SET_LOGGEDIN';
+export const GET_USER = 'GET_USER';

@@ -1,13 +1,14 @@
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 import {
 	BrowserRouter as Router,
+	Redirect,
 	Route,
 	Switch,
-	Redirect,
 } from 'react-router-dom';
 import AuthState from './context/auth/AuthState';
 import PrivateRoute from './components/routing/PrivateRoute';
 import Login from './components/pages/login/Login';
+import Home from './components/pages/home/Home';
 import Gameplay from './components/pages/gameplay/Gameplay';
 import './App.scss';
 
@@ -17,9 +18,9 @@ const App = () => {
 			<Fragment>
 				<Router>
 					<Switch>
-						<PrivateRoute exact path="/" component={Gameplay} />
-						<Route exact path="/login" component={Login} />
+						<Route exact path="/" component={Home} />
 						<Route exact path="/gameplay" component={Gameplay} />
+						<Route exact path="/login" component={Login} />
 					</Switch>
 				</Router>
 			</Fragment>

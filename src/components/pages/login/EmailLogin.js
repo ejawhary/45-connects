@@ -11,46 +11,38 @@ const EmailLogin = () => {
 		setEmail(e.target.value);
 	};
 
-	const onSubmit = () => {
+	const onSubmit = (e) => {
+		e.preventDefault();
 		emailLogin({
 			email,
 		});
 	};
 
 	return (
-		<form style={formStyles}>
+		<form className="email-form flex-col">
 			<input
-				style={inputStyles}
+				className="input email-form-input"
 				type="email"
 				placeholder="Enter Email"
 				name="email"
 				aria-label="enter email to login"
-				tabIndex="1"
 				onChange={onChange}
 			/>
 			<input
-				style={inputStyles}
+				className="input email-form-input"
 				type="text"
 				placeholder="Enter Password (not a real one!)"
 				name="password"
 				aria-label="enter your password to login"
 			/>
-			<input type="submit" value="Login With Email" />
+			<input
+				className="btn btn-primary btn-sumbit"
+				type="submit"
+				value="Login"
+				onSubmit={onSubmit}
+			/>
 		</form>
 	);
 };
 
-const formStyles = {
-	display: 'flex',
-	flexDirection: 'column',
-};
-
-const inputStyles = {
-	width: '232px',
-	height: '54.5px',
-	borderRadius: '20px',
-	marginBottom: '1rem',
-	background: '#368d33',
-	color: '#fff',
-};
 export default EmailLogin;

@@ -25,3 +25,21 @@ body {
 	@include flex-Center;
 	grid-gap: 1.5rem;
 }
+
+.flex-col {
+	@include flex-Center;
+	flex-direction: column;
+}
+.flex-row {
+	@include flex-Center;
+	flex-direction: row;
+}
+
+.grid-col-2 {
+	display: grid;
+}
+
+a:focus,
+a:active {
+	outline: 2px solid $red;
+}

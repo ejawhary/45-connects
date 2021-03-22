@@ -3,12 +3,17 @@
 @import './abstracts/mixins';
 @import './abstracts/text';
 @import './abstracts/animation';
+@import './components/inputs';
+@import './components/btn';
 @import './components/card';
 @import './components/cardFront';
 @import './components/cardBack';
 @import './components/_playerCards.scss';
 @import './components/table';
 @import './components/webcams';
+@import './components/emailForm';
+@import './components/navbar';
+@import './pages/home';
 
 body {
 	background-color: green;

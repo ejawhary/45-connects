@@ -4,7 +4,7 @@ import AuthContext from '../../../context/auth/authContext';
 
 const GoogleBtn = () => {
 	const authContext = useContext(AuthContext);
-	const { googleLogin } = authContext;
+	const { login } = authContext;
 
 	const componentClicked = () => {
 		console.log('clicked');
@@ -12,7 +12,7 @@ const GoogleBtn = () => {
 
 	const responseGoogle = (response) => {
 		// console.log(response);
-		googleLogin({
+		login({
 			userId: response.profileObj.googleId,
 			token: response.accessToken,
 			name: response.profileObj.name,

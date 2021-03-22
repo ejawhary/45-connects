@@ -1,0 +1,28 @@
+.btn {
+	border: none;
+	outline: none;
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-size: 1.5rem;
+
+	&:focus,
+	&:hover {
+		box-shadow: 3px 3px 5px $black;
+	}
+}
+
+.btn-dark {
+	background-color: #333;
+	color: #fff;
+}
+
+.btn-light {
+	background-color: $creme;
+	color: #333;
+}
+
+.btn-primary {
+	background-color: $green;
+	color: #fff;
+	border: 3px solid $black-alt;
+}

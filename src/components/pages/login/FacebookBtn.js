@@ -4,7 +4,7 @@ import AuthContext from '../../../context/auth/authContext';
 
 const FacebookBtn = () => {
 	const authContext = useContext(AuthContext);
-	const { facebookLogin } = authContext;
+	const { login } = authContext;
 
 	const componentClicked = () => {
 		console.log('clicked');
@@ -12,7 +12,7 @@ const FacebookBtn = () => {
 
 	const responseFacebook = (response) => {
 		// console.log(response);
-		facebookLogin({
+		login({
 			userId: response.id,
 			token: response.accessToken,
 			name: response.name,
@@ -23,9 +23,9 @@ const FacebookBtn = () => {
 
 	return (
 		<FacebookLogin
-			style={{ borderRadius: '10px' }}
 			appId="913536599480262"
-			autoLoad={true}
+			autoLoad={false}
+			size="small"
 			fields="name,email,picture"
 			onClick={componentClicked}
 			callback={responseFacebook}

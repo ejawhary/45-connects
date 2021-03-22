@@ -1,0 +1,42 @@
+@import '../abstracts/colours';
+@import '../abstracts/mixins';
+@import '../abstracts/text';
+
+.navbar {
+	@include flex-Center;
+	justify-content: space-between;
+	height: 50px;
+	padding: 0 30px;
+	background-color: $red;
+
+	.nav-branding {
+		.ff-nav {
+			font-size: 3rem;
+			color: $red;
+			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-color: black;
+		}
+		.connects-nav {
+			font-size: 2rem;
+			color: $black;
+			font-style: italic;
+			margin-left: 1px;
+		}
+	}
+
+	ul {
+		@include flex-Center;
+
+		li {
+			font-family: Arial, Helvetica, sans-serif;
+			margin-left: 10px;
+			list-style: none;
+			font-size: 1.5rem;
+
+			a {
+				color: $black;
+				text-decoration: none;
+			}
+		}
+	}
+}

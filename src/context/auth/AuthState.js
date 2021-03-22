@@ -1,63 +1,88 @@
 import React, { useReducer } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-import {
-	FACEBOOK_LOGIN,
-	FACEBOOK_LOGOUT,
-	GOOGLE_LOGIN,
-	GOOGLE_LOGOUT,
-} from '../types';
+import axios from 'axios';
+import { LOGIN, LOGOUT, SET_LOGGEDIN, GET_USER } from '../types';
 
 const AuthState = (props) => {
 	const initialState = {
-		isLoggedIn: false,
-		facebookUserData: null,
-		googleUserData: null,
-		emailUserData: null,
+		token: localStorage.getItem('token'),
+		isLoading: true,
+		userData: '',
+		emailUserData: '',
 	};
 
 	const [state, dispatch] = useReducer(authReducer, initialState);
 
-	// Facebook Login
-	const facebookLogin = (userDataObj) => {
-		dispatch({
-			type: FACEBOOK_LOGIN,
-			payload: userDataObj,
-		});
+	const config = {
+		headers: {
+			'content-type': 'application/json',
+		},
 	};
 
-	// Facebook Logout
-	const facebookLogout = () => {
-		dispatch({
-			type: FACEBOOK_LOGOUT,
-		});
-	};
-	// Google Login
-	const googleLogin = (userDataObj) => {
-		dispatch({
-			type: GOOGLE_LOGIN,
-			payload: userDataObj,
-		});
+	// Login
+	const login = async (userDataObj) => {
+		try {
+			const res = await axios.put('/auth', userDataObj, config);
+			setToken(userDataObj.token);
+			dispatch({
+				type: LOGIN,
+				payload: res.data,
+			});
+		} catch (err) {
+			console.error(err);
+		}
 	};
 
-	// Google Logout
-	const googleLogout = () => {
+	// get Loggedin user
+	const getUser = async () => {
+		if (state.token) {
+			try {
+				const res = await axios.get('/auth');
+				console.log(res.data);
+				dispatch({
+					type: GET_USER,
+					payload: res.data,
+				});
+			} catch (err) {}
+		}
+	};
+
+	// Logout
+	const logout = () => {
 		dispatch({
-			type: GOOGLE_LOGOUT,
+			type: LOGOUT,
 		});
+		localStorage.removeItem('token');
+		console.log('logout');
+	};
+
+	// Set Token
+	const setToken = (token) => {
+		localStorage.setItem('token', token);
+	};
+
+	//  setLoggedIn
+	const setLoggedIn = (token) => {
+		if (localStorage.token) {
+			dispatch({
+				type: SET_LOGGEDIN,
+			});
+		}
 	};
 
 	return (
 		<AuthContext.Provider
 			value={{
+				token: state.token,
+				isLoading: state.isLoggedIn,
 				isLoggedIn: state.isLoggedIn,
-				facebookUserData: state.facebookUserData,
-				googleUserData: state.googleUserData,
+				userData: state.userData,
 				emailUserData: state.emailUserData,
-				facebookLogin,
-				facebookLogout,
-				googleLogin,
-				googleLogout,
+				login,
+				logout,
+				setLoggedIn,
+				getUser,
 			}}
 		>
 			{props.children}

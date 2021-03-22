@@ -1,31 +1,34 @@
-import {
-	FACEBOOK_LOGIN,
-	FACEBOOK_LOGOUT,
-	GOOGLE_LOGIN,
-	GOOGLE_LOGOUT,
-} from '../types';
+import { LOGIN, LOGOUT, SET_LOGGEDIN, GET_USER } from '../types';
 
 const authReducer = (state, action) => {
 	switch (action.type) {
-		case FACEBOOK_LOGIN:
+		case LOGIN:
 			return {
 				...state,
 				isLoggedIn: true,
-				facebookUserData: action.payload,
+				userData: action.payload,
+				isLoading: false,
 			};
 
-		case FACEBOOK_LOGOUT:
-			return { ...state, isLoggedIn: false, facebookUserData: null };
+		case LOGOUT:
+			return {
+				...state,
+				isLoggedIn: false,
+				userData: null,
+				isLoading: false,
+			};
 
-		case GOOGLE_LOGIN:
+		case GET_USER:
+			console.log(action.payload);
 			return {
 				...state,
 				isLoggedIn: true,
-				googleUserData: action.payload,
+				userData: action.payload,
+				isLoading: false,
 			};
 
-		case GOOGLE_LOGOUT:
-			return { ...state, isLoggedIn: false, googleUserData: null };
+		case SET_LOGGEDIN:
+			return { ...state, isLoggedIn: true, isLoading: false };
 
 		default:
 			return state;
