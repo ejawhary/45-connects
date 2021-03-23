@@ -6,10 +6,10 @@ const RegisterGamesForm = () => {
 	const { registerGame } = gamesContext;
 
 	const empty = {
-		date: 'Select date',
-		contribution: 'Select contribution',
-		rounds: 'Select Rounds',
-		club: 'Select Club',
+		date: 'Wednesday 21st April 2021',
+		contribution: '&euro;0',
+		rounds: 'All Rounds',
+		club: 'Random',
 	};
 	const [formData, setFormData] = useState(empty);
 
@@ -35,7 +35,10 @@ const RegisterGamesForm = () => {
 						value={formData.date}
 						onChange={onChange}
 					>
-						<option value="Wednesday 21st April 2021">
+						<option
+							value="Wednesday 21st April 2021"
+							selected="selected"
+						>
 							Wednesday 21st April 2021
 						</option>
 						<option value="Wednesday 28th April 2021">
@@ -51,7 +54,9 @@ const RegisterGamesForm = () => {
 						value={formData.contribution}
 						onChange={onChange}
 					>
-						<option value="&euro;0">&euro;0</option>
+						<option value="&euro;0" selected="selected">
+							&euro;0
+						</option>
 						<option value="&euro;5">&euro;5</option>
 						<option value="&euro;10">&euro;10</option>
 						<option value="&euro;15">&euro;15</option>
@@ -65,7 +70,9 @@ const RegisterGamesForm = () => {
 						value={formData.rounds}
 						onChange={onChange}
 					>
-						<option value="All Rounds">All Rounds</option>
+						<option value="All Rounds" selected="selected">
+							All Rounds
+						</option>
 						<option value="1 Round">1 Round</option>
 						<option value="2 Rounds">2 Rounds</option>
 					</select>
@@ -78,7 +85,9 @@ const RegisterGamesForm = () => {
 						value={formData.club}
 						onChange={onChange}
 					>
-						<option value="Random">Random</option>
+						<option value="Random" selected="selected">
+							Random
+						</option>
 						<option value="Cork">Cork</option>
 						<option value="Dublin">Dublin</option>
 						<option value="Galway">Galway</option>

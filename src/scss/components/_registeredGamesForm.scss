@@ -14,8 +14,10 @@
 	flex-basis: 50%;
 
 	h2 {
+		justify-self: flex-start;
 		font-size: 2.5rem;
-		position: relative;
+		position: absolute;
+		top: 175px;
 
 		&::after {
 			position: absolute;
@@ -36,7 +38,7 @@
 
 		label {
 			@include flex-col;
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 			text-align: start;
 
 			select {

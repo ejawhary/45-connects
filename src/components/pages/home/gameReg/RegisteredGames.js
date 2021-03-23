@@ -1,54 +1,27 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import GamesContext from '../../../../context/games/gamesContext';
+import RegisteredGameItem from './RegisteredGameItem';
 
 const Register4Games = () => {
+	const gamesContext = useContext(GamesContext);
+	const { getGames, gamesData, loading } = gamesContext;
+
+	useEffect(() => {
+		getGames();
+	}, []);
+
 	return (
 		<div className="comp">
-			<h2 className="league-registration-title">League Registation</h2>
-			<form className="games-registration-form">
-				{/* Date */}
-				<label>
-					League Date
-					<select name="date">
-						<option value="Wednesday 21st April 2021">
-							Wednesday 21st April 2021
-						</option>
-						<option value="Wednesday 28th April 2021">
-							Wednesday 28th April 2021
-						</option>
-					</select>
-				</label>
-				{/* Contribution */}
-				<label>
-					Contribution
-					<select name="contribution">
-						<option value="&euro;0">&euro;0</option>
-						<option value="&euro;5">&euro;5</option>
-						<option value="&euro;10">&euro;10</option>
-						<option value="&euro;15">&euro;15</option>
-					</select>
-				</label>
-				{/* Rounds */}
-				<label>
-					Rounds
-					<select name="rounds">
-						<option value="All Rounds">All Rounds</option>
-						<option value="1 Round">1 Round</option>
-						<option value="2 Rounds">2 Rounds</option>
-					</select>
-				</label>
-				{/* Club */}
-				<label>
-					Club
-					<select name="club">
-						<option value="Random">Random</option>
-						<option value="Cork">Cork</option>
-						<option value="Dublin">Dublin</option>
-						<option value="Galway">Galway</option>
-						<option value="Limerick">Limerick</option>
-					</select>
-				</label>
-				<input type="submit" value="Register" />
-			</form>
+			<h2>Registered Games</h2>
+			<ul>
+				{!loading && gamesData.length !== 0 ? (
+					gamesData.map((game) => (
+						<RegisteredGameItem game={game} key={game.id} />
+					))
+				) : (
+					<h4>You have not registered for any games yet!</h4>
+				)}
+			</ul>
 		</div>
 	);
 };

@@ -1,13 +1,8 @@
 import { Fragment } from 'react';
-import {
-	BrowserRouter as Router,
-	Redirect,
-	Route,
-	Switch,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthState from './context/auth/AuthState';
 import GamesState from './context/games/GamesState';
-import PrivateRoute from './components/routing/PrivateRoute';
+// import PrivateRoute from './components/routing/PrivateRoute';
 import Login from './components/pages/login/Login';
 import Home from './components/pages/home/Home';
 import Gameplay from './components/pages/gameplay/Gameplay';

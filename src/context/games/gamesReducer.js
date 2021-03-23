@@ -1,19 +1,25 @@
-import { REGISTER_GAME, GET_GAMES } from '../types';
+import { REGISTER_GAME, GET_GAMES, SET_LOADING } from '../types';
 
 const authReducer = (state, action) => {
 	switch (action.type) {
 		case REGISTER_GAME:
 			return {
 				...state,
-				gameData: action.payload,
-				isLoading: false,
+				gamesData: [...state.gamesData, action.payload],
+				loading: false,
 			};
 
 		case GET_GAMES:
 			return {
 				...state,
-				gameData: action.payload,
-				isLoading: false,
+				gamesData: action.payload,
+				loading: false,
+			};
+
+		case SET_LOADING:
+			return {
+				...state,
+				loading: true,
 			};
 
 		default:

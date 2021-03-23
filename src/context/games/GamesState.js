@@ -2,12 +2,12 @@ import React, { useReducer } from 'react';
 import GamesContext from './gamesContext';
 import gamesReducer from './gamesReducer';
 import axios from 'axios';
-import { REGISTER_GAME, GET_GAMES } from '../types';
+import { REGISTER_GAME, GET_GAMES, SET_LOADING } from '../types';
 
 const GamesState = (props) => {
 	const initialState = {
-		gameData: [],
-		isLoading: true,
+		gamesData: [],
+		loading: false,
 	};
 
 	const [state, dispatch] = useReducer(gamesReducer, initialState);
@@ -20,6 +20,7 @@ const GamesState = (props) => {
 
 	// Register Game
 	const registerGame = async (gameDataObj) => {
+		setLoading();
 		try {
 			const res = await axios.post('/games', gameDataObj, config);
 			dispatch({
@@ -33,6 +34,7 @@ const GamesState = (props) => {
 
 	// Get Games
 	const getGames = async () => {
+		setLoading();
 		try {
 			const res = await axios.get('/games');
 			dispatch({
@@ -44,10 +46,16 @@ const GamesState = (props) => {
 		}
 	};
 
+	const setLoading = () => {
+		dispatch({
+			type: SET_LOADING,
+		});
+	};
+
 	return (
 		<GamesContext.Provider
 			value={{
-				gameData: state.gameData,
+				gamesData: state.gamesData,
 				isLoading: state.isLoading,
 				registerGame,
 				getGames,

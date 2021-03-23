@@ -19,7 +19,6 @@ const authReducer = (state, action) => {
 			};
 
 		case GET_USER:
-			console.log(action.payload);
 			return {
 				...state,
 				isLoggedIn: true,
