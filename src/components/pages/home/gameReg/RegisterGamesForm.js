@@ -24,14 +24,11 @@ const RegisterGamesForm = () => {
 	};
 
 	return (
-		<div>
-			<h2 className="league-registration-title">League Registation</h2>
-			<form
-				className="games-registration-form flex-col"
-				onSubmit={onSubmit}
-			>
+		<div className="comp">
+			<h2>League Registation</h2>
+			<form onSubmit={onSubmit}>
 				{/* Date */}
-				<label className="flex-col">
+				<label>
 					League Date
 					<select
 						name="date"
@@ -47,7 +44,7 @@ const RegisterGamesForm = () => {
 					</select>
 				</label>
 				{/* Contribution */}
-				<label className="flex-col">
+				<label>
 					Contribution
 					<select
 						name="contribution"
@@ -61,7 +58,7 @@ const RegisterGamesForm = () => {
 					</select>
 				</label>
 				{/* Rounds */}
-				<label className="flex-col">
+				<label>
 					Rounds
 					<select
 						name="rounds"
@@ -74,7 +71,7 @@ const RegisterGamesForm = () => {
 					</select>
 				</label>
 				{/* Club */}
-				<label className="flex-col">
+				<label>
 					Club
 					<select
 						name="club"
@@ -88,7 +85,11 @@ const RegisterGamesForm = () => {
 						<option value="Limerick">Limerick</option>
 					</select>
 				</label>
-				<input type="submit" value="Register" />
+				<input
+					type="submit"
+					className="btn btn-dark"
+					value="Register"
+				/>
 			</form>
 		</div>
 	);
