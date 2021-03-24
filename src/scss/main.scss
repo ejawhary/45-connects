@@ -4,6 +4,7 @@
 @import './abstracts/text';
 @import './abstracts/animation';
 @import './components/inputs';
+@import './components/comp';
 @import './components/btn';
 @import './components/card';
 @import './components/cardFront';
@@ -15,6 +16,8 @@
 @import './components/navbar';
 @import './components/registeredGamesForm';
 @import './components/upcomingGame';
+@import './components/registeredGames';
+@import './components/gameItem';
 @import './pages/home';
 
 body {

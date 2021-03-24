@@ -8,18 +8,11 @@
   },
   "games": [
     {
-      "date": "Wednesday 21st April 2021",
-      "contribution": "€10",
+      "date": "21/04/2021",
+      "contribution": "&euro;0",
       "rounds": "All Rounds",
-      "club": "Dublin",
+      "club": "Random",
       "id": 1
-    },
-    {
-      "date": "Wednesday 28th April 2021",
-      "contribution": "€5",
-      "rounds": "2 Rounds",
-      "club": "Galway",
-      "id": 2
     }
   ]
 }

@@ -6,33 +6,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	border: 1px solid $black-alt;
-	padding: 30px;
+	padding: 30px 10px 0px;
 	margin: 0px 10px 10px;
 	box-shadow: 2px 2px 3px $black-alt;
-	flex-basis: 50%;
+	max-height: 610px;
+	text-align: center;
 
 	h2 {
 		justify-self: flex-start;
 		font-size: 2.5rem;
-		position: absolute;
-		top: 175px;
-
-		&::after {
-			position: absolute;
-			content: '';
-			bottom: -20%;
-			left: 25%;
-			background-color: $red;
-			width: 200px;
-			height: 5px;
-			z-index: 10;
-			border-radius: 5px;
-		}
+		margin-bottom: 0px;
 	}
 
 	form {
+		flex-grow: 1;
 		font-size: 2rem;
 		@include flex-col;
 
@@ -52,9 +41,6 @@
 				line-height: inherit;
 				border-radius: 5px;
 			}
-		}
-
-		input {
 		}
 	}
 }

@@ -1,4 +1,4 @@
-import { REGISTER_GAME, GET_GAMES, SET_LOADING } from '../types';
+import { REGISTER_GAME, DELETE_GAME, GET_GAMES, SET_LOADING } from '../types';
 
 const authReducer = (state, action) => {
 	switch (action.type) {
@@ -6,6 +6,15 @@ const authReducer = (state, action) => {
 			return {
 				...state,
 				gamesData: [...state.gamesData, action.payload],
+				loading: false,
+			};
+
+		case DELETE_GAME:
+			return {
+				...state,
+				gamesData: state.gamesData.filter(
+					(game) => game.id !== action.payload
+				),
 				loading: false,
 			};
 

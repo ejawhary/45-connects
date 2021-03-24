@@ -6,7 +6,7 @@ const RegisterGamesForm = () => {
 	const { registerGame } = gamesContext;
 
 	const empty = {
-		date: 'Wednesday 21st April 2021',
+		date: '21/04/2021',
 		contribution: '&euro;0',
 		rounds: 'All Rounds',
 		club: 'Random',
@@ -24,7 +24,7 @@ const RegisterGamesForm = () => {
 	};
 
 	return (
-		<div className="comp">
+		<div className="comp" style={{ flexBasis: '35%' }}>
 			<h2>League Registation</h2>
 			<form onSubmit={onSubmit}>
 				{/* Date */}
@@ -35,15 +35,10 @@ const RegisterGamesForm = () => {
 						value={formData.date}
 						onChange={onChange}
 					>
-						<option
-							value="Wednesday 21st April 2021"
-							selected="selected"
-						>
-							Wednesday 21st April 2021
+						<option value="21/04/2021" selected="selected">
+							21/04/2021
 						</option>
-						<option value="Wednesday 28th April 2021">
-							Wednesday 28th April 2021
-						</option>
+						<option value="28/04/2021">28/04/2021</option>
 					</select>
 				</label>
 				{/* Contribution */}

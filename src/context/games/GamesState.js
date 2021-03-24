@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import GamesContext from './gamesContext';
 import gamesReducer from './gamesReducer';
 import axios from 'axios';
-import { REGISTER_GAME, GET_GAMES, SET_LOADING } from '../types';
+import { REGISTER_GAME, DELETE_GAME, GET_GAMES, SET_LOADING } from '../types';
 
 const GamesState = (props) => {
 	const initialState = {
@@ -26,6 +26,21 @@ const GamesState = (props) => {
 			dispatch({
 				type: REGISTER_GAME,
 				payload: res.data,
+			});
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	// Delete game
+	const deleteGame = async (id) => {
+		setLoading();
+
+		try {
+			await axios.delete(`/games/${id}`);
+			dispatch({
+				type: DELETE_GAME,
+				payload: id,
 			});
 		} catch (err) {
 			console.error(err);
@@ -58,6 +73,7 @@ const GamesState = (props) => {
 				gamesData: state.gamesData,
 				isLoading: state.isLoading,
 				registerGame,
+				deleteGame,
 				getGames,
 			}}
 		>

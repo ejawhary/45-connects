@@ -1,0 +1,41 @@
+@import '../abstracts/colours';
+@import '../abstracts/mixins';
+@import '../abstracts/text';
+
+.game-item {
+	border: 3px solid $black;
+	margin-bottom: 20px;
+	padding: 5px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 2px 2px $black-alt;
+	font-size: 1.1rem;
+
+	.inner-box {
+		border: 1px solid $black;
+		padding: 3px;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		box-shadow: 2px 2px 2px $black-alt;
+
+		.key {
+			flex: 1;
+			border-bottom: 1px solid $black;
+			font-weight: bold;
+			padding: 10px 15px;
+		}
+
+		.value {
+			flex: 2;
+
+			padding: 10px 15px;
+		}
+	}
+	button,
+	a {
+		margin: 5px;
+	}
+}

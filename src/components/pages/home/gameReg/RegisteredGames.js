@@ -13,13 +13,20 @@ const Register4Games = () => {
 	return (
 		<div className="comp">
 			<h2>Registered Games</h2>
-			<ul>
+			<ul className="game-list">
 				{!loading && gamesData.length !== 0 ? (
 					gamesData.map((game) => (
 						<RegisteredGameItem game={game} key={game.id} />
 					))
 				) : (
-					<h4>You have not registered for any games yet!</h4>
+					<h4
+						style={{
+							fontSize: '1.5rem',
+							alignSelf: 'flex-start',
+						}}
+					>
+						No Games Registered
+					</h4>
 				)}
 			</ul>
 		</div>
@@ -27,3 +34,4 @@ const Register4Games = () => {
 };
 
 export default Register4Games;
+// style={{ height: '70%', overflowY: 'scroll' }}
