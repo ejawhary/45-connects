@@ -38,7 +38,10 @@ const RegisteredGameItem = ({ game }) => {
 					<span>{club}</span>
 				</div>
 			</div>
-			{id === 1 ? (
+			<button className="btn btn-danger" onClick={onClick}>
+				X
+			</button>
+			{/* {id === 1 ? (
 				<Link className="btn btn-primary" to="/gameplay">
 					Play
 				</Link>
@@ -46,7 +49,7 @@ const RegisteredGameItem = ({ game }) => {
 				<button className="btn btn-danger" onClick={onClick}>
 					X
 				</button>
-			)}
+			)} */}
 		</li>
 	);
 };

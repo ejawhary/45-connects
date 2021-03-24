@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import GoogleLogin from 'react-google-login';
 import AuthContext from '../../../context/auth/authContext';
+import PropTypes from 'prop-types';
 
-const GoogleBtn = () => {
+const GoogleBtn = ({ deleteAll }) => {
 	const authContext = useContext(AuthContext);
 	const { login } = authContext;
 
@@ -11,6 +12,7 @@ const GoogleBtn = () => {
 	};
 
 	const responseGoogle = (response) => {
+		// deleteAll();
 		// console.log(response);
 		login({
 			userId: response.profileObj.googleId,
@@ -30,6 +32,10 @@ const GoogleBtn = () => {
 			cookiePolicy={'single_host_origin'}
 		/>
 	);
+};
+
+GoogleBtn.propTypes = {
+	deleteAll: PropTypes.func.isRequired,
 };
 
 export default GoogleBtn;

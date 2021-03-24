@@ -1,13 +1,19 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useContext } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import axios from 'axios';
-import { LOGIN, LOGOUT, SET_LOGGEDIN, GET_USER } from '../types';
+import {
+	LOGIN,
+	LOGOUT,
+	SET_LOGGEDIN,
+	GET_USER,
+	SET_AUTH_LOADING,
+} from '../types';
 
 const AuthState = (props) => {
 	const initialState = {
 		token: localStorage.getItem('token'),
-		isLoading: true,
+		authLoading: false,
 		userData: '',
 		emailUserData: '',
 	};
@@ -22,6 +28,8 @@ const AuthState = (props) => {
 
 	// Login
 	const login = async (userDataObj) => {
+		setAuthLoading();
+
 		try {
 			const res = await axios.put('/auth', userDataObj, config);
 			setToken(userDataObj.token);
@@ -36,6 +44,8 @@ const AuthState = (props) => {
 
 	// get Loggedin user
 	const getUser = async () => {
+		setAuthLoading();
+
 		if (state.token) {
 			try {
 				const res = await axios.get('/auth');
@@ -49,11 +59,12 @@ const AuthState = (props) => {
 
 	// Logout
 	const logout = () => {
+		setAuthLoading();
+
 		dispatch({
 			type: LOGOUT,
 		});
 		localStorage.removeItem('token');
-		console.log('logout');
 	};
 
 	// Set Token
@@ -63,6 +74,8 @@ const AuthState = (props) => {
 
 	//  setLoggedIn
 	const setLoggedIn = (token) => {
+		setAuthLoading();
+
 		if (localStorage.token) {
 			dispatch({
 				type: SET_LOGGEDIN,
@@ -70,11 +83,18 @@ const AuthState = (props) => {
 		}
 	};
 
+	// Set Auth Loading
+	const setAuthLoading = () => {
+		dispatch({
+			type: SET_AUTH_LOADING,
+		});
+	};
+
 	return (
 		<AuthContext.Provider
 			value={{
 				token: state.token,
-				isLoading: state.isLoggedIn,
+				authLoading: state.authLoading,
 				isLoggedIn: state.isLoggedIn,
 				userData: state.userData,
 				emailUserData: state.emailUserData,
@@ -82,6 +102,7 @@ const AuthState = (props) => {
 				logout,
 				setLoggedIn,
 				getUser,
+				setAuthLoading,
 			}}
 		>
 			{props.children}

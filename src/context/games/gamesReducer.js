@@ -1,4 +1,9 @@
-import { REGISTER_GAME, DELETE_GAME, GET_GAMES, SET_LOADING } from '../types';
+import {
+	REGISTER_GAME,
+	DELETE_GAME,
+	GET_GAMES,
+	SET_GAMES_LOADING,
+} from '../types';
 
 const authReducer = (state, action) => {
 	switch (action.type) {
@@ -6,7 +11,7 @@ const authReducer = (state, action) => {
 			return {
 				...state,
 				gamesData: [...state.gamesData, action.payload],
-				loading: false,
+				gamesLoading: false,
 			};
 
 		case DELETE_GAME:
@@ -15,20 +20,20 @@ const authReducer = (state, action) => {
 				gamesData: state.gamesData.filter(
 					(game) => game.id !== action.payload
 				),
-				loading: false,
+				gamesLoading: false,
 			};
 
 		case GET_GAMES:
 			return {
 				...state,
 				gamesData: action.payload,
-				loading: false,
+				gamesLoading: false,
 			};
 
-		case SET_LOADING:
+		case SET_GAMES_LOADING:
 			return {
 				...state,
-				loading: true,
+				gamesLoading: true,
 			};
 
 		default:

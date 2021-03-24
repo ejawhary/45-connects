@@ -2,12 +2,17 @@ import React, { useReducer } from 'react';
 import GamesContext from './gamesContext';
 import gamesReducer from './gamesReducer';
 import axios from 'axios';
-import { REGISTER_GAME, DELETE_GAME, GET_GAMES, SET_LOADING } from '../types';
+import {
+	REGISTER_GAME,
+	DELETE_GAME,
+	GET_GAMES,
+	SET_GAMES_LOADING,
+} from '../types';
 
 const GamesState = (props) => {
 	const initialState = {
 		gamesData: [],
-		loading: false,
+		gamesLoading: false,
 	};
 
 	const [state, dispatch] = useReducer(gamesReducer, initialState);
@@ -20,7 +25,7 @@ const GamesState = (props) => {
 
 	// Register Game
 	const registerGame = async (gameDataObj) => {
-		setLoading();
+		setGamesLoading();
 		try {
 			const res = await axios.post('/games', gameDataObj, config);
 			dispatch({
@@ -34,7 +39,7 @@ const GamesState = (props) => {
 
 	// Delete game
 	const deleteGame = async (id) => {
-		setLoading();
+		setGamesLoading();
 
 		try {
 			await axios.delete(`/games/${id}`);
@@ -47,23 +52,42 @@ const GamesState = (props) => {
 		}
 	};
 
-	// Get Games
-	const getGames = async () => {
-		setLoading();
+	// Delete all games
+	const deleteAll = () => {
+		setGamesLoading();
+
 		try {
-			const res = await axios.get('/games');
-			dispatch({
-				type: GET_GAMES,
-				payload: res.data,
+			state.gamesData.forEach(async (game) => {
+				await axios.delete(`/games/${game.id}`);
+				dispatch({
+					type: DELETE_GAME,
+					payload: game.id,
+				});
 			});
 		} catch (err) {
 			console.error(err);
 		}
 	};
 
-	const setLoading = () => {
+	// Get Games
+	const getGames = async (userId) => {
+		setGamesLoading();
+		try {
+			const res = await axios.get('/games');
+			const userGames = res.data.filter((game) => userId === game.userId);
+			dispatch({
+				type: GET_GAMES,
+				payload: userGames,
+			});
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	// Set Games Loading
+	const setGamesLoading = () => {
 		dispatch({
-			type: SET_LOADING,
+			type: SET_GAMES_LOADING,
 		});
 	};
 
@@ -71,9 +95,10 @@ const GamesState = (props) => {
 		<GamesContext.Provider
 			value={{
 				gamesData: state.gamesData,
-				isLoading: state.isLoading,
+				gamesLoading: state.gamesLoading,
 				registerGame,
 				deleteGame,
+				deleteAll,
 				getGames,
 			}}
 		>

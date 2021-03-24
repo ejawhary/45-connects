@@ -1,4 +1,10 @@
-import { LOGIN, LOGOUT, SET_LOGGEDIN, GET_USER } from '../types';
+import {
+	LOGIN,
+	LOGOUT,
+	SET_LOGGEDIN,
+	GET_USER,
+	SET_AUTH_LOADING,
+} from '../types';
 
 const authReducer = (state, action) => {
 	switch (action.type) {
@@ -7,7 +13,7 @@ const authReducer = (state, action) => {
 				...state,
 				isLoggedIn: true,
 				userData: action.payload,
-				isLoading: false,
+				authLoading: false,
 			};
 
 		case LOGOUT:
@@ -15,7 +21,7 @@ const authReducer = (state, action) => {
 				...state,
 				isLoggedIn: false,
 				userData: null,
-				isLoading: false,
+				authLoading: false,
 			};
 
 		case GET_USER:
@@ -23,11 +29,17 @@ const authReducer = (state, action) => {
 				...state,
 				isLoggedIn: true,
 				userData: action.payload,
-				isLoading: false,
+				authLoading: false,
 			};
 
 		case SET_LOGGEDIN:
-			return { ...state, isLoggedIn: true, isLoading: false };
+			return { ...state, isLoggedIn: true, authLoading: false };
+
+		case SET_AUTH_LOADING:
+			return {
+				...state,
+				authLoading: true,
+			};
 
 		default:
 			return state;

@@ -5,4 +5,5 @@ export const GET_USER = 'GET_USER';
 export const REGISTER_GAME = 'REGISTER_GAME';
 export const DELETE_GAME = 'DELETE_GAME';
 export const GET_GAMES = 'GET_GAMES';
-export const SET_LOADING = 'SET_LOADING';
+export const SET_GAMES_LOADING = 'SET_GAMES_LOADING';
+export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';

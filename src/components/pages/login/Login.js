@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import FacebookBtn from './FacebookBtn';
 import GoogleBtn from './GoogleBtn';
 import EmailLogin from './EmailLogin';
+import GamesContext from '../../../context/games/gamesContext';
 
 const Login = () => {
-	const responseFacebook = async (response) => {
-		await console.log(response);
-		return true;
-	};
-	const componentClicked = () => {
-		console.log('clicked');
-	};
+	const gamesContext = useContext(GamesContext);
+	const { deleteAll } = gamesContext;
 
 	return (
 		<div className="container flex-col">
@@ -36,9 +32,9 @@ const Login = () => {
 					</h2>
 				</div>
 			</h1>
-			<GoogleBtn style={{ width: '400px' }} />
-			<FacebookBtn />
-			<EmailLogin />
+			<GoogleBtn deleteAll={deleteAll} />
+			<FacebookBtn deleteAll={deleteAll} />
+			<EmailLogin deleteAll={deleteAll} />
 		</div>
 	);
 };

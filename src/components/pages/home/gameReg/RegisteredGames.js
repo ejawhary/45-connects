@@ -1,20 +1,29 @@
 import React, { useContext, useEffect } from 'react';
 import GamesContext from '../../../../context/games/gamesContext';
+import AuthContext from '../../../../context/auth/authContext';
 import RegisteredGameItem from './RegisteredGameItem';
 
 const Register4Games = () => {
 	const gamesContext = useContext(GamesContext);
-	const { getGames, gamesData, loading } = gamesContext;
+	const { getGames, gamesData, gamesLoading } = gamesContext;
+	const authContext = useContext(AuthContext);
+	const {
+		userData: { userId },
+		authLoading,
+		getUser,
+	} = authContext;
 
 	useEffect(() => {
-		getGames();
-	}, []);
+		if (!authLoading) {
+			getGames(userId);
+		}
+	}, [authLoading]);
 
 	return (
 		<div className="comp">
 			<h2>Registered Games</h2>
 			<ul className="game-list">
-				{!loading && gamesData.length !== 0 ? (
+				{!gamesLoading && gamesData.length !== 0 ? (
 					gamesData.map((game) => (
 						<RegisteredGameItem game={game} key={game.id} />
 					))
