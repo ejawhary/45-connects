@@ -1,0 +1,8 @@
+.trump-container {
+	grid-column: 7/8;
+	grid-row: 2/3;
+	height: 180px;
+	.trump {
+		transform: rotate(0deg);
+	}
+}

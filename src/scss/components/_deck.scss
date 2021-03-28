@@ -1,42 +1,7 @@
 .deck-container {
-	display: relative;
-	background-color: #000;
-	width: 100px;
-	height: 200px;
+	grid-column: 4/5;
+	grid-row: 3/4;
+	width: 120px;
+
 	display: flex;
-
-	.card-container-back {
-		background: linear-gradient(#999, $creme);
-
-		&:not(:first-child) {
-		}
-
-		.card {
-			.center {
-				width: 100%;
-				height: 50%;
-				text-align: center;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				font-size: 1rem;
-
-				.ff,
-				.connects {
-					transform: rotate(15deg);
-					// border: 1px solid #333;
-				}
-
-				.ff {
-					font-size: 3rem;
-					height: 55px;
-				}
-
-				.connects {
-					font-size: 1.5rem;
-				}
-			}
-		}
-	}
 }
