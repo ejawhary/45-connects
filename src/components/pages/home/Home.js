@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import AuthContext from '../../../context/auth/authContext';
 import Navbar from '../../layout/Navbar';
 import UpcomingGame from './upcomingGame/UpcomingGame';
 import RegisterGamesForm from './gameReg/RegisterGamesForm';
 import RegisteredGames from './gameReg/RegisteredGames';
 
 const Home = () => {
+	const authContext = useContext(AuthContext);
+	const { getUser } = authContext;
+
+	useEffect(() => {
+		getUser();
+		// eslint-disable-next-line
+	}, []);
+
 	return (
 		<>
 			<Navbar />

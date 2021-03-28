@@ -1,12 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import GamesContext from '../../../context/games/gamesContext';
+import AuthContext from '../../../context/auth/authContext';
 import FacebookBtn from './FacebookBtn';
 import GoogleBtn from './GoogleBtn';
 import EmailLogin from './EmailLogin';
-import GamesContext from '../../../context/games/gamesContext';
 
-const Login = () => {
+const Login = (props) => {
 	const gamesContext = useContext(GamesContext);
 	const { deleteAll } = gamesContext;
+	const authContext = useContext(AuthContext);
+	const { authenticated } = authContext;
+
+	useEffect(() => {
+		if (authenticated) {
+			props.history.push('/');
+		}
+	});
 
 	return (
 		<div className="container flex-col">

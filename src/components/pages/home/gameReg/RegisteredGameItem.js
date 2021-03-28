@@ -12,14 +12,24 @@ const RegisteredGameItem = ({ game }) => {
 		deleteGame(id);
 	};
 
+	const playNow = (
+		<Link className="btn btn-primary" to="/gameplay">
+			Play Now!
+		</Link>
+	);
+
+	const gameDate = (
+		<div className="inner-box">
+			<div className="key">Date</div>
+			<div className="value">
+				<span>{date}</span>
+			</div>
+		</div>
+	);
+
 	return (
 		<li className="game-item">
-			<div className="inner-box">
-				<div className="key">Date</div>
-				<div className="value">
-					<span>{date}</span>
-				</div>
-			</div>
+			{date === '21/04/2021' ? playNow : gameDate}
 			<div className="inner-box">
 				<div className="key">Contribution</div>
 				<div className="value">

@@ -1,7 +1,7 @@
 {
   "auth": {
     "userId": "103855466232680176573",
-    "token": "ya29.a0AfH6SMCY-tkUPGYiT2RIgGCW3MmhlMdFvyIH-ftaW1WCX3S_0wsIZ6QPOPgAjN80XxykdaFCOUaNShCI3sRjSMUq1mjMUXgjPxYLtaixCZQDr1DS1JeZT4pNXPun8aDmBfo-IJJpapW6lXL7QMyVJNtr66JHRw",
+    "token": "ya29.a0AfH6SMCAL7WRNiV3nXxxix1IneAUpd5XXzHH7sSR_ZOyzjqgEZD_t8p0q7ciYBxH5-jkMyAlnZSv7legGAhey0S29Lmhfv5tHq9awi3_ywtgycL8VYtUhCUJhZqm_yvqFuE-phCie8Xyc3vR7RR2IDlY1LzaNA",
     "name": "Eamonn Jawhary",
     "email": "eamonnjawhary@gmail.com",
     "picture": "https://lh3.googleusercontent.com/a-/AOh14GiHYhTYdunyhJyODVUNHhLhx9JZzjfiZbPjQZUC=s96-c"
@@ -14,102 +14,6 @@
       "rounds": "All Rounds",
       "club": "Random",
       "id": 1
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 2
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 3
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 4
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 5
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 6
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 7
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 8
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 9
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 10
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 11
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 12
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 13
     }
   ]
 }

@@ -2,13 +2,7 @@ import React, { useReducer, useContext } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import axios from 'axios';
-import {
-	LOGIN,
-	LOGOUT,
-	SET_LOGGEDIN,
-	GET_USER,
-	SET_AUTH_LOADING,
-} from '../types';
+import { LOGIN, LOGOUT, GET_USER, SET_AUTH_LOADING } from '../types';
 
 const AuthState = (props) => {
 	const initialState = {
@@ -53,6 +47,7 @@ const AuthState = (props) => {
 				type: LOGIN,
 				payload: res.data,
 			});
+			getUser();
 		} catch (err) {
 			console.error(err);
 		}
@@ -85,7 +80,6 @@ const AuthState = (props) => {
 				userData: state.userData,
 				login,
 				logout,
-				setLoggedIn,
 				getUser,
 				setAuthLoading,
 			}}

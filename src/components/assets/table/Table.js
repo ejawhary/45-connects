@@ -3,6 +3,7 @@ import Player1Cards from '../cards/playerCards/Player1Cards';
 import Player2Cards from '../cards/playerCards/Player2Cards';
 import Player3Cards from '../cards/playerCards/Player3Cards';
 import Player4Cards from '../cards/playerCards/Player4Cards';
+import Deck from '../cards/Deck';
 const Table = () => {
 	return (
 		<>
@@ -15,6 +16,7 @@ const Table = () => {
 					<div className="timer">
 						<span>14:45</span>
 					</div>
+					<Deck />
 					<Player1Cards />
 					<Player2Cards />
 					<Player3Cards />

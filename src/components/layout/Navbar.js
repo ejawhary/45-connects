@@ -30,9 +30,9 @@ const Navbar = () => {
 					/>
 				</li>
 				<li>
-					<Link to="/login" onClick={onClick}>
+					<a href="#!" onClick={onClick}>
 						Logout
-					</Link>
+					</a>
 				</li>
 			</ul>
 		</nav>

@@ -8,10 +8,10 @@ import Webcam4 from '../../assets/webcams/Webcam4';
 
 const Gameplay = () => {
 	const authContext = useContext(AuthContext);
-	const { setLoggedIn } = authContext;
+	const { getUser } = authContext;
 
 	useEffect(() => {
-		setLoggedIn();
+		getUser();
 	}, []);
 
 	return (
