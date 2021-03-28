@@ -9,31 +9,32 @@ import {
 const authReducer = (state, action) => {
 	switch (action.type) {
 		case LOGIN:
+			const { userId, token, name, email, picture } = action.payload;
+			if (token) {
+				localStorage.setItem('token', token);
+			}
 			return {
 				...state,
-				isLoggedIn: true,
-				userData: action.payload,
+				authenticated: true,
+				userData: { ...state.userData, userId, name, email, picture },
 				authLoading: false,
 			};
 
 		case LOGOUT:
 			return {
 				...state,
-				isLoggedIn: false,
+				authenticated: null,
 				userData: null,
-				authLoading: false,
+				authLoading: null,
 			};
 
 		case GET_USER:
 			return {
 				...state,
-				isLoggedIn: true,
+				authenticated: true,
 				userData: action.payload,
 				authLoading: false,
 			};
-
-		case SET_LOGGEDIN:
-			return { ...state, isLoggedIn: true, authLoading: false };
 
 		case SET_AUTH_LOADING:
 			return {

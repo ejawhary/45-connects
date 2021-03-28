@@ -13,9 +13,9 @@ import {
 const AuthState = (props) => {
 	const initialState = {
 		token: localStorage.getItem('token'),
-		authLoading: false,
+		authenticated: null,
+		authLoading: null,
 		userData: '',
-		emailUserData: '',
 	};
 
 	const [state, dispatch] = useReducer(authReducer, initialState);
@@ -26,34 +26,35 @@ const AuthState = (props) => {
 		},
 	};
 
-	// Login
-	const login = async (userDataObj) => {
-		setAuthLoading();
-
-		try {
-			const res = await axios.put('/auth', userDataObj, config);
-			setToken(userDataObj.token);
-			dispatch({
-				type: LOGIN,
-				payload: res.data,
-			});
-		} catch (err) {
-			console.error(err);
-		}
-	};
-
-	// get Loggedin user
+	// Get User
 	const getUser = async () => {
 		setAuthLoading();
 
-		if (state.token) {
+		if (localStorage.token) {
 			try {
 				const res = await axios.get('/auth');
 				dispatch({
 					type: GET_USER,
 					payload: res.data,
 				});
-			} catch (err) {}
+			} catch (err) {
+				console.error(err);
+			}
+		}
+	};
+
+	// Login
+	const login = async (userDataObj) => {
+		setAuthLoading();
+
+		try {
+			const res = await axios.put('/auth', userDataObj, config);
+			dispatch({
+				type: LOGIN,
+				payload: res.data,
+			});
+		} catch (err) {
+			console.error(err);
 		}
 	};
 
@@ -67,22 +68,6 @@ const AuthState = (props) => {
 		localStorage.removeItem('token');
 	};
 
-	// Set Token
-	const setToken = (token) => {
-		localStorage.setItem('token', token);
-	};
-
-	//  setLoggedIn
-	const setLoggedIn = (token) => {
-		setAuthLoading();
-
-		if (localStorage.token) {
-			dispatch({
-				type: SET_LOGGEDIN,
-			});
-		}
-	};
-
 	// Set Auth Loading
 	const setAuthLoading = () => {
 		dispatch({
@@ -94,10 +79,10 @@ const AuthState = (props) => {
 		<AuthContext.Provider
 			value={{
 				token: state.token,
+				authenticated: state.authenticated,
 				authLoading: state.authLoading,
-				isLoggedIn: state.isLoggedIn,
+				authenticated: state.authenticated,
 				userData: state.userData,
-				emailUserData: state.emailUserData,
 				login,
 				logout,
 				setLoggedIn,
