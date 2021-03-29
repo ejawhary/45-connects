@@ -1,5 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AuthContext from '../../../context/auth/authContext';
+import GamesContext from '../../../context/games/gamesContext';
+import Spinner from '../../layout/Spinner';
 import Table from '../../assets/table/Table';
 import Webcam1 from '../../assets/webcams/Webcam1';
 import Webcam2 from '../../assets/webcams/Webcam2';
@@ -8,13 +10,11 @@ import Webcam4 from '../../assets/webcams/Webcam4';
 
 const Gameplay = () => {
 	const authContext = useContext(AuthContext);
-	const { getUser } = authContext;
+	const { getUser, authLoading } = authContext;
+	const gamesContext = useContext(GamesContext);
+	const { gamesLoading } = gamesContext;
 
-	useEffect(() => {
-		getUser();
-	}, []);
-
-	return (
+	const table = (
 		<div className="container">
 			<Webcam1 />
 			<Webcam2 />
@@ -23,6 +23,8 @@ const Gameplay = () => {
 			<Table />
 		</div>
 	);
+
+	return !gamesLoading && !gamesLoading ? table : <Spinner />;
 };
 
 export default Gameplay;

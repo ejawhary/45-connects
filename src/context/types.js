@@ -7,3 +7,5 @@ export const DELETE_GAME = 'DELETE_GAME';
 export const GET_GAMES = 'GET_GAMES';
 export const SET_GAMES_LOADING = 'SET_GAMES_LOADING';
 export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';
+export const GET_SCORES = 'GET_SCORES';
+export const GET_ALL_SCORES = 'GET_ALL_SCORES';

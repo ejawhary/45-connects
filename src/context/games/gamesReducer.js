@@ -3,6 +3,8 @@ import {
 	DELETE_GAME,
 	GET_GAMES,
 	SET_GAMES_LOADING,
+	GET_SCORES,
+	GET_ALL_SCORES,
 } from '../types';
 
 const authReducer = (state, action) => {
@@ -27,6 +29,20 @@ const authReducer = (state, action) => {
 			return {
 				...state,
 				gamesData: action.payload,
+				gamesLoading: false,
+			};
+
+		case GET_SCORES:
+			return {
+				...state,
+				scores: action.payload,
+				gamesLoading: false,
+			};
+
+		case GET_ALL_SCORES:
+			return {
+				...state,
+				allScores: action.payload,
 				gamesLoading: false,
 			};
 

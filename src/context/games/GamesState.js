@@ -7,12 +7,16 @@ import {
 	DELETE_GAME,
 	GET_GAMES,
 	SET_GAMES_LOADING,
+	GET_SCORES,
+	GET_ALL_SCORES,
 } from '../types';
 
 const GamesState = (props) => {
 	const initialState = {
 		gamesData: [],
 		gamesLoading: false,
+		scores: [],
+		allScores: [],
 	};
 
 	const [state, dispatch] = useReducer(gamesReducer, initialState);
@@ -23,7 +27,7 @@ const GamesState = (props) => {
 		},
 	};
 
-	// Register Game
+	// Register GameGET_ALL_SCORES
 	const registerGame = async (gameDataObj) => {
 		setGamesLoading();
 		try {
@@ -84,6 +88,34 @@ const GamesState = (props) => {
 		}
 	};
 
+	// Get Scores
+	const getScores = async () => {
+		setGamesLoading();
+		try {
+			const res = await axios.get('/scores');
+			dispatch({
+				type: GET_SCORES,
+				payload: res.data,
+			});
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	// Get All Scores
+	const getAllScores = async () => {
+		setGamesLoading();
+		try {
+			const res = await axios.get('/allScores');
+			dispatch({
+				type: GET_ALL_SCORES,
+				payload: res.data,
+			});
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
 	// Set Games Loading
 	const setGamesLoading = () => {
 		dispatch({
@@ -100,6 +132,8 @@ const GamesState = (props) => {
 				deleteGame,
 				deleteAll,
 				getGames,
+				getScores,
+				getAllScores,
 			}}
 		>
 			{props.children}

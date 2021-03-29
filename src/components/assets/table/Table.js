@@ -1,4 +1,5 @@
 import React from 'react';
+import GamesScore from '../../assets/gameScore/GameScore';
 import Player1Cards from '../cards/playerCards/Player1Cards';
 import Player2Cards from '../cards/playerCards/Player2Cards';
 import Player3Cards from '../cards/playerCards/Player3Cards';
@@ -10,6 +11,7 @@ const Table = () => {
 		<>
 			<section className="table-container">
 				<div className="table">
+					<GamesScore />
 					<div className="branding">
 						<h1 className="ff red-text">45</h1>
 						<h2 className="connects">Connects</h2>
