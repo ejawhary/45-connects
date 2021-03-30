@@ -1,0 +1,68 @@
+@import '../../abstracts/colours';
+@import '../../abstracts/mixins';
+@import '../../abstracts/text';
+
+.player-cards-container {
+	position: relative;
+	background-color: #333;
+}
+
+#card-1,
+#card-2,
+#card-3,
+#card-4,
+#card-5 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform-origin: 0% 100%;
+}
+
+#card-1 {
+	transform: rotate(45deg);
+}
+#card-2 {
+	transform: rotate(27deg);
+}
+#card-3 {
+	transform: rotate(9deg);
+}
+#card-4 {
+	transform: rotate(-9deg);
+}
+#card-5 {
+	transform: rotate(-27deg);
+}
+
+.card-container-back {
+	background: linear-gradient(#999, $creme);
+	transform: rotate(0deg);
+	border: 1px solid #333;
+
+	.card {
+		transform: rotate(0deg);
+		.center {
+			width: 100%;
+			height: 50%;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			.ff,
+			.connects {
+				transform: rotate(0deg);
+			}
+
+			.ff {
+				font-size: 2.5rem;
+				height: 55px;
+			}
+
+			.connects {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}

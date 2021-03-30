@@ -34,6 +34,7 @@ $height: 110px;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		box-shadow: 1px 1px 5px $black;
 
 		.name {
 			h3 {
