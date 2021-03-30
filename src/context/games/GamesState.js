@@ -13,10 +13,10 @@ import {
 
 const GamesState = (props) => {
 	const initialState = {
-		gamesData: [],
+		gamesData: null,
 		gamesLoading: false,
-		scores: [],
-		allScores: [],
+		scores: null,
+		allScores: null,
 	};
 
 	const [state, dispatch] = useReducer(gamesReducer, initialState);
@@ -128,6 +128,8 @@ const GamesState = (props) => {
 			value={{
 				gamesData: state.gamesData,
 				gamesLoading: state.gamesLoading,
+				scores: state.scores,
+				allScores: state.allScores,
 				registerGame,
 				deleteGame,
 				deleteAll,

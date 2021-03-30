@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import axios from 'axios';
@@ -76,7 +76,6 @@ const AuthState = (props) => {
 				token: state.token,
 				authenticated: state.authenticated,
 				authLoading: state.authLoading,
-				authenticated: state.authenticated,
 				userData: state.userData,
 				login,
 				logout,

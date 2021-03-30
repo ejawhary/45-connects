@@ -1,0 +1,68 @@
+@import '../abstracts/colours';
+@import '../abstracts/mixins';
+@import '../abstracts/text';
+
+$width: 600px;
+$height: 110px;
+
+.game-score {
+	position: absolute;
+	top: 0;
+	left: calc(50% - ($width / 2));
+	width: $width;
+	height: $height;
+	border: 3px $black-alt;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: $black-alt;
+	border-left: 2px solid $red;
+	border-bottom: 2px solid $red;
+	border-right: 2px solid $red;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	opacity: 0.9;
+	box-shadow: 2px 2px 2px $black;
+
+	.player {
+		background-color: $creme;
+		width: 100px;
+		height: 85%;
+		border-radius: 10px;
+		border: 2px solid $black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.name {
+			h3 {
+				text-align: center;
+			}
+		}
+
+		.score-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+
+			.score {
+				flex: 1;
+				height: 100%;
+				border-top: 1px dashed black;
+				text-align: center;
+				padding-top: 5px;
+				margin-top: 5px;
+			}
+
+			.tricks {
+				border-right: 1px dashed black;
+			}
+
+			.games {
+				border-left: 1px dashed black;
+			}
+		}
+	}
+}

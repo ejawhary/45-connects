@@ -4,7 +4,6 @@ import Navbar from '../../layout/Navbar';
 import UpcomingGame from './upcomingGame/UpcomingGame';
 import RegisterGamesForm from './gameReg/RegisterGamesForm';
 import RegisteredGames from './gameReg/RegisteredGames';
-import Spinner from '../../layout/Spinner';
 
 const Home = () => {
 	const authContext = useContext(AuthContext);

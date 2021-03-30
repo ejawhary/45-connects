@@ -1,10 +1,4 @@
-import {
-	LOGIN,
-	LOGOUT,
-	SET_LOGGEDIN,
-	GET_USER,
-	SET_AUTH_LOADING,
-} from '../types';
+import { LOGIN, LOGOUT, GET_USER, SET_AUTH_LOADING } from '../types';
 
 const authReducer = (state, action) => {
 	switch (action.type) {

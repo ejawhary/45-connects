@@ -1,7 +1,7 @@
 {
   "auth": {
     "userId": "103855466232680176573",
-    "token": "ya29.a0AfH6SMAO7lH_HTxf40NWuzzKU4dooy2jTIrwrhRPi5i4IIT_gCI2ibgGav8bhmYnpFzYwSAKe306WFZk0jJjybEWQGffg_YQNVjNwE-mwTWMZktQ5AuOBkSXUIKvZoLjETBJ7O9qVV310vOVMo6x0NWANm9cjQ",
+    "token": "ya29.a0AfH6SMDGtGc4MDnalCMmG8O_SVu3IP7LfanTbR4GNAE3P89dWrXGsrZiA5eJUqWrd1Ls7ecvr32lSc1CJyPd5IQHKCZRWjYlYDwbfv0tD6SwLn1qduvexUmbH7rOFbtcsoo1g4m4RIZDdqCVhHAGbdV2czFYDw",
     "name": "Eamonn Jawhary",
     "email": "eamonnjawhary@gmail.com",
     "picture": "https://lh3.googleusercontent.com/a-/AOh14GiHYhTYdunyhJyODVUNHhLhx9JZzjfiZbPjQZUC=s96-c"
@@ -30,14 +30,6 @@
       "rounds": "2 Rounds",
       "club": "Cork",
       "id": 4
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "28/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 5
     }
   ],
   "scores": [

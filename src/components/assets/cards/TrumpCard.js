@@ -1,5 +1,4 @@
 import React from 'react';
-import CardFront from './CardFront';
 
 const TrumpCard = ({ value, suit }) => {
 	return (

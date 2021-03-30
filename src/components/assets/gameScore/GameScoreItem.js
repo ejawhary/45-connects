@@ -5,13 +5,15 @@ const GameScoreItem = ({ name, tricks, games }) => {
 	return (
 		<div className="player">
 			<div className="name">
-				<h3>{name}</h3>
+				<h2>{name}</h2>
 			</div>
 			<div className="score-container">
-				<div className="tricks">
+				<div className="tricks score">
+					<h3>T</h3>
 					<h4>{tricks}</h4>
 				</div>
-				<div className="games">
+				<div className="games score">
+					<h3>G</h3>
 					<h4>{games}</h4>
 				</div>
 			</div>

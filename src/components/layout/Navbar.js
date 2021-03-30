@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 
 const Navbar = () => {
 	useEffect(() => {
 		getUser();
+		// eslint-disable-next-line
 	}, []);
 
 	const authContext = useContext(AuthContext);
@@ -27,6 +27,7 @@ const Navbar = () => {
 					<img
 						style={{ width: '40px' }}
 						src={picture ? picture : ''}
+						alt=""
 					/>
 				</li>
 				<li>

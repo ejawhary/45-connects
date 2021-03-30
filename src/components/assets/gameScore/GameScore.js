@@ -1,20 +1,15 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import GamesContext from '../../../context/games/gamesContext';
 import GameScoreItem from './GameScoreItem';
 import Spinner from '../../layout/Spinner';
 
 const GameScore = () => {
 	const gamesContext = useContext(GamesContext);
-	const { getScores, scores, gamesLoading } = gamesContext;
-
-	useEffect(() => {
-		getScores();
-		// eslint-disable-next-line
-	}, []);
+	const { scores, gamesLoading } = gamesContext;
 
 	return (
 		<div className="game-score">
-			{!gamesLoading && scores ? (
+			{!gamesLoading && scores !== null ? (
 				scores.map((player) => (
 					<GameScoreItem
 						key={player.id}

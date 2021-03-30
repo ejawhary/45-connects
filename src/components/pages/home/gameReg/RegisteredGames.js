@@ -10,20 +10,20 @@ const Register4Games = () => {
 	const {
 		userData: { userId },
 		authLoading,
-		getUser,
 	} = authContext;
 
 	useEffect(() => {
 		if (!authLoading) {
 			getGames(userId);
 		}
+		//eslint-disable-next-line
 	}, [authLoading]);
 
 	return (
 		<div className="comp">
 			<h2>Registered Games</h2>
 			<ul className="game-list">
-				{!gamesLoading && gamesData.length !== 0 ? (
+				{!gamesLoading && gamesData !== null ? (
 					gamesData.map((game) => (
 						<RegisteredGameItem game={game} key={game.id} />
 					))

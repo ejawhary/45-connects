@@ -7,10 +7,6 @@ const GoogleBtn = ({ deleteAll }) => {
 	const authContext = useContext(AuthContext);
 	const { login } = authContext;
 
-	const componentClicked = () => {
-		console.log('clicked');
-	};
-
 	const responseGoogle = (response) => {
 		// deleteAll();
 		// console.log(response);
