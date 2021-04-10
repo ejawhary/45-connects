@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import GamesContext from '../../../context/games/gamesContext';
 import AuthContext from '../../../context/auth/authContext';
 import FacebookBtn from './FacebookBtn';
-// import GoogleBtn from './GoogleBtn';
+import GoogleBtn from './GoogleBtn';
 import EmailLogin from './EmailLogin';
 
 const Login = (props) => {
