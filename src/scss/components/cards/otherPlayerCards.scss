@@ -7,32 +7,89 @@
 	background-color: #333;
 }
 
-#card-1,
-#card-2,
-#card-3,
-#card-4,
-#card-5 {
+// Player 2 Top Left
+#card-1-TL,
+#card-2-TL,
+#card-3-TL,
+#card-4-TL,
+#card-5-TL {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	transform-origin: 0% 100%;
+	transform-origin: 100% 100%;
 }
 
-#card-1 {
+#card-1-TL {
 	transform: rotate(45deg);
 }
-#card-2 {
+#card-2-TL {
 	transform: rotate(27deg);
 }
-#card-3 {
+#card-3-TL {
 	transform: rotate(9deg);
 }
-#card-4 {
+#card-4-TL {
 	transform: rotate(-9deg);
 }
-#card-5 {
+#card-5-TL {
 	transform: rotate(-27deg);
 }
+
+// Player 3 Top Right
+#card-1-TR,
+#card-2-TR,
+#card-3-TR,
+#card-4-TR,
+#card-5-TR {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform-origin: 100% 100%;
+}
+
+#card-1-TR {
+	transform: rotate(45deg);
+}
+#card-2-TR {
+	transform: rotate(27deg);
+}
+#card-3-TR {
+	transform: rotate(9deg);
+}
+#card-4-TR {
+	transform: rotate(-9deg);
+}
+#card-5-TR {
+	transform: rotate(-27deg);
+}
+
+// // Player 3 Bottom Right
+// #card-1-BR,
+// #card-2-BR,
+// #card-3-BR,
+// #card-4-BR,
+// #card-5-BR {
+// 	position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	transform-origin: 100% 0%;
+// }
+
+// #card-1-BR {
+// 	transform: rotate(45deg);
+// }
+// #card-2-BR {
+// 	transform: rotate(27deg);
+// }
+// #card-3-BR {
+// 	transform: rotate(9deg);
+// }
+// #card-4-BR {
+// 	transform: rotate(-9deg);
+// }
+// #card-5-BR {
+// 	transform: rotate(-27deg);
+// }
 
 .card-container-back {
 	background: linear-gradient(#999, $creme);
