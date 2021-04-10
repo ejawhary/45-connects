@@ -41,7 +41,7 @@ const Login = (props) => {
 					</h2>
 				</div>
 			</h1>
-			{/* <GoogleBtn deleteAll={deleteAll} /> */}
+			<GoogleBtn deleteAll={deleteAll} />
 			<FacebookBtn deleteAll={deleteAll} />
 			<EmailLogin deleteAll={deleteAll} />
 		</div>
