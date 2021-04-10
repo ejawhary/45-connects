@@ -8,8 +8,8 @@ $height: 110px;
 .game-score {
 	position: absolute;
 	top: 0;
-	left: calc(50% - ($width / 2));
-	width: $width;
+	left: calc(50% - 300px);
+	width: 600px;
 	height: $height;
 	border: 3px $black-alt;
 	display: flex;
