@@ -11,8 +11,8 @@ const Player4HandBR = () => {
 
 const handStyleBL = {
 	position: 'absolute',
-	bottom: '12rem',
-	right: '10rem',
+	bottom: '4rem',
+	right: '3rem',
 	transformOrigin: '100% 100%',
 	transform: 'rotate(-25deg)',
 };

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
+import Spinner from '../layout/Spinner';
 
 const Navbar = () => {
 	useEffect(() => {
@@ -8,14 +9,14 @@ const Navbar = () => {
 	}, []);
 
 	const authContext = useContext(AuthContext);
-	const { logout, getUser, userData } = authContext;
+	const { logout, getUser, userData, authLoading } = authContext;
 	const { name, picture } = userData;
 
 	const onClick = () => {
 		logout();
 	};
 
-	return (
+	return !authLoading ? (
 		<nav className="navbar">
 			<div className="nav-branding">
 				<span className="ff-nav">45</span>
@@ -37,6 +38,8 @@ const Navbar = () => {
 				</li>
 			</ul>
 		</nav>
+	) : (
+		<Spinner />
 	);
 };
 

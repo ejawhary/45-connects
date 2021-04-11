@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CardFront from '../CardFront';
+import '../../../../scss/components/cards/playerCards1.scss';
 
 const Player1Cards = () => {
 	const initialState = [
@@ -87,6 +88,7 @@ const Player1Cards = () => {
 		<div className="player1Cards">
 			{hand.map((card) => (
 				<CardFront
+					id={'PC1-' + card.id}
 					value={card.value}
 					suit={card.suit}
 					player1={card.player1}

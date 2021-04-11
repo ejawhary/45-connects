@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from 'react';
+import Branding from './Branding';
+import Timer from './Timer';
 import Player1Cards from '../cards/playerCards/Player1Cards';
 import Player2HandTL from '../cards/playerCards/Player2HandTL';
 import Player3HandTR from '../cards/playerCards/Player3HandTR';
@@ -10,13 +12,8 @@ const Table = () => {
 		<>
 			<section className="table-container" style={{ zIndex: 100 }}>
 				<div className="table">
-					<div className="branding">
-						<h1 className="ff red-text">45</h1>
-						<h2 className="connects">Connects</h2>
-					</div>
-					<div className="timer">
-						<span>14:45</span>
-					</div>
+					<Branding />
+					<Timer />
 					<Deck />
 					<TrumpCard value={'J'} suit={'♣'} />
 					<Player1Cards />

@@ -6,6 +6,7 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import Login from './components/pages/login/Login';
 import Home from './components/pages/home/Home';
 import Gameplay from './components/pages/gameplay/Gameplay';
+import Scoreboard from './components/pages/scoreboard/Scoreboard';
 import './App.scss';
 
 const App = () => {
@@ -16,10 +17,15 @@ const App = () => {
 					<Router>
 						<Switch>
 							<PrivateRoute exact path="/" component={Home} />
-							<Route
+							<PrivateRoute
 								exact
 								path="/gameplay"
 								component={Gameplay}
+							/>
+							<PrivateRoute
+								exact
+								path="/scoreboard"
+								component={Scoreboard}
 							/>
 							<Route exact path="/login" component={Login} />
 						</Switch>

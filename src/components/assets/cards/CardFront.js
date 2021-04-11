@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 
-const CardFront = ({ value, suit, player1, raise, onClick }) => {
+const CardFront = ({ value, suit, player1, raise, onClick, id }) => {
 	return (
 		<Fragment>
 			<div
+				id={id}
 				className={`card-container card-container-front${
 					raise ? ' raise' : ''
 				}`}

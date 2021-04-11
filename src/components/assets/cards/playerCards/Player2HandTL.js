@@ -11,8 +11,8 @@ const Player2HandTL = () => {
 
 const handStyleTL = {
 	position: 'absolute',
-	top: '12rem',
-	left: '5rem',
+	top: '4rem',
+	left: '-2rem',
 	transformOrigin: '100% 100%',
 	transform: 'rotate(160deg)',
 };

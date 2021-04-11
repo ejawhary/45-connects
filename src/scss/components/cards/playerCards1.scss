@@ -1,0 +1,32 @@
+.player1Cards {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	bottom: 0;
+	left: calc(50% - 75px);
+	transform: rotate(12deg);
+}
+
+#PC1-0,
+#PC1-1,
+#PC1-2,
+#PC1-3,
+#PC1-4 {
+	transform-origin: 100% 100%;
+}
+
+#PC1-0 {
+	transform: rotate(-50deg);
+}
+#PC1-1 {
+	transform: rotate(-27deg);
+}
+#PC1-2 {
+	transform: rotate(-4deg);
+}
+#PC1-3 {
+	transform: rotate(19deg);
+}
+#PC1-4 {
+	transform: rotate(42deg);
+}

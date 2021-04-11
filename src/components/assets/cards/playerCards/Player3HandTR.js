@@ -11,8 +11,8 @@ const Player3HandTR = () => {
 
 const handStyleTR = {
 	position: 'absolute',
-	top: '12rem',
-	right: '10rem',
+	top: '4rem',
+	right: '3rem',
 	transformOrigin: '100% 100%',
 	transform: 'rotate(-90deg)',
 };

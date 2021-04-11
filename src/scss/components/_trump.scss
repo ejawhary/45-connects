@@ -1,7 +1,10 @@
 .trump-container {
-	grid-column: 7/8;
-	grid-row: 2/3;
-	height: 180px;
+	position: absolute;
+	top: calc(20% - 80px);
+	right: calc(40% - 35px);
+	height: 160px;
+	width: 75px;
+	text-align: center;
 	.trump {
 		transform: rotate(0deg);
 	}
