@@ -26,7 +26,7 @@ const AuthState = (props) => {
 
 		if (localStorage.token) {
 			try {
-				const res = await axios.get('/auth');
+				const res = await axios.get('http://localhost:5000/auth');
 				dispatch({
 					type: GET_USER,
 					payload: res.data,
@@ -42,7 +42,11 @@ const AuthState = (props) => {
 		setAuthLoading();
 
 		try {
-			const res = await axios.put('/auth', userDataObj, config);
+			const res = await axios.put(
+				'http://localhost:5000/auth',
+				userDataObj,
+				config
+			);
 			dispatch({
 				type: LOGIN,
 				payload: res.data,
