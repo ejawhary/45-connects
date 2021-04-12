@@ -32,7 +32,7 @@ const GamesState = (props) => {
 		setGamesLoading();
 		try {
 			const res = await axios.post(
-				'http://localhost:3000/games',
+				'http://45connects.xyz:5000/games',
 				gameDataObj,
 				config
 			);
@@ -50,7 +50,7 @@ const GamesState = (props) => {
 		setGamesLoading();
 
 		try {
-			await axios.delete(`http://localhost:3000/games/${id}`);
+			await axios.delete(`http://45connects.xyz:5000/games/${id}`);
 			dispatch({
 				type: DELETE_GAME,
 				payload: id,
@@ -66,7 +66,9 @@ const GamesState = (props) => {
 
 		try {
 			state.gamesData.forEach(async (game) => {
-				await axios.delete(`http://localhost:3000/games/${game.id}`);
+				await axios.delete(
+					`http://45connects.xyz:5000/games/${game.id}`
+				);
 				dispatch({
 					type: DELETE_GAME,
 					payload: game.id,
@@ -81,7 +83,7 @@ const GamesState = (props) => {
 	const getGames = async (userId) => {
 		setGamesLoading();
 		try {
-			const res = await axios.get('http://localhost:3000/games');
+			const res = await axios.get('http://45connects.xyz:5000/games');
 			const userGames = res.data.filter((game) => userId === game.userId);
 			dispatch({
 				type: GET_GAMES,
@@ -96,7 +98,7 @@ const GamesState = (props) => {
 	const getScores = async () => {
 		setGamesLoading();
 		try {
-			const res = await axios.get('http://localhost:3000/scores');
+			const res = await axios.get('http://45connects.xyz:5000/scores');
 			dispatch({
 				type: GET_SCORES,
 				payload: res.data,
@@ -110,7 +112,7 @@ const GamesState = (props) => {
 	const getAllScores = async () => {
 		setGamesLoading();
 		try {
-			const res = await axios.get('http://localhost:3000/allScores');
+			const res = await axios.get('http://45connects.xyz:5000/allScores');
 			dispatch({
 				type: GET_ALL_SCORES,
 				payload: res.data,
