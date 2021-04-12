@@ -21,7 +21,7 @@ const GoogleBtn = ({ deleteAll }) => {
 
 	return (
 		<GoogleLogin
-			clientId="857463888471-qhau98ptq5d5k52kbtolj03d5o7v33au.apps.googleusercontent.com"
+			clientId="332392594695-4h8jtih2sga3pdtq7hou5lr9btdbq5vt.apps.googleusercontent.com"
 			buttonText="LOGIN WITH GOOGLE"
 			onSuccess={responseGoogle}
 			onFailure={responseGoogle}
