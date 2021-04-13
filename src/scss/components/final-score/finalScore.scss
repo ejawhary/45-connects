@@ -33,7 +33,7 @@
 
 		// Titles
 		.score-item-titles {
-			position: fixed;
+			position: absolute;
 			top: 0;
 			left: calc(50% - 45%);
 			background-color: $creme;
@@ -54,6 +54,13 @@
 				justify-content: center;
 				align-items: center;
 				flex: 1;
+
+				&:nth-child(1) {
+					flex: 0.7;
+				}
+				&:nth-child(2) {
+					flex: 1.6;
+				}
 
 				h3 {
 					text-align: center;
@@ -89,6 +96,13 @@
 				justify-content: center;
 				align-items: center;
 				flex: 1;
+
+				&:nth-child(1) {
+					flex: 0.7;
+				}
+				&:nth-child(2) {
+					flex: 1.6;
+				}
 
 				h3 {
 					text-align: center;

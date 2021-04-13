@@ -36,10 +36,10 @@ const Scoreboard = () => {
 							allScores.map((player) => (
 								<ScoreBoardItem
 									key={player.id}
-									position={player.id + 1}
+									position={player.id}
 									name={player.name}
 									games={player.games}
-									tricks={player.ticks}
+									tricks={player.tricks}
 									seasonScore={player.seasonScore}
 									winnings={player.winnings}
 								/>
