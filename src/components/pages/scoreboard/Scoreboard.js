@@ -18,11 +18,11 @@ const Scoreboard = () => {
 		getUser();
 
 		if (!authLoading) {
-			allScores();
+			getAllScores();
 		}
 
 		// eslint-disable-next-line
-	}, [authLoading]);
+	}, []);
 
 	return (
 		<>
