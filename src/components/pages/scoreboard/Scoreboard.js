@@ -29,7 +29,7 @@ const Scoreboard = () => {
 					<div className="final-scores">
 						<ScoreBoardTitles />
 						{!gamesLoading && allScores !== null ? (
-							gamesData.map((game) => (
+							allScores.map((game) => (
 								<ScoreBoardItem
 									key={allScores.id}
 									position={allScores.id + 1}
