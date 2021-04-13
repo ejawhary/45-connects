@@ -1,69 +1,247 @@
 {
-  "auth": {
-    "userId": "103855466232680176573",
-    "token": "ya29.a0AfH6SMBwG-FyvF78c_ulN7OsoIm6VLAkHSRopDlirlKNz2BBDLWc2hESodA0fQZa8Hm5ycdHYG0_TVmYqbWFZDjjidyPPWmQH12JgZFZ0D4UcGXFOUfeimq89JR4GfNaVn1YEJqGAawAE5Ev0i0RBE5wKSRV4g",
-    "name": "Eamonn Jawhary",
-    "email": "eamonnjawhary@gmail.com",
-    "picture": "https://lh3.googleusercontent.com/a-/AOh14GiHYhTYdunyhJyODVUNHhLhx9JZzjfiZbPjQZUC=s96-c"
-  },
-  "games": [
-    {
-      "userId": "10158696176881858",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 3
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "21/04/2021",
-      "contribution": "€5",
-      "rounds": "1 Round",
-      "club": "Dublin",
-      "id": 4
-    },
-    {
-      "userId": "103855466232680176573",
-      "date": "28/04/2021",
-      "contribution": "€10",
-      "rounds": "2 Rounds",
-      "club": "Dublin",
-      "id": 5
-    },
-    {
-      "userId": "107426908509768612897",
-      "date": "21/04/2021",
-      "contribution": "&euro;0",
-      "rounds": "All Rounds",
-      "club": "Random",
-      "id": 6
-    }
-  ],
-  "scores": [
-    {
-      "id": 1,
-      "name": "John",
-      "tricks": 5,
-      "games": 1
-    },
-    {
-      "id": 2,
-      "name": "Mary",
-      "tricks": 10,
-      "games": 0
-    },
-    {
-      "id": 3,
-      "name": "Liz",
-      "tricks": 5,
-      "games": 0
-    },
-    {
-      "id": 4,
-      "name": "Frank",
-      "tricks": 15,
-      "games": 1
-    }
-  ]
+	"auth": {
+		"userId": "111832488900687046282",
+		"token": "ya29.a0AfH6SMCTsOT3INKVInHPAQavKZjigmrG6i-omM0URuJ3gQMqFWf_XRPTf8NXsD87HilzIXjfhzhu7YzXoRpYpdjnUvVCsRIveRqJvTE6AYFYWzpRu1Aql-Pk1tGhEWdF2DwtlOoBGhG-8EMsCQioEtqS05-BrA",
+		"name": "John O'Connor",
+		"email": "j.oconnor454545@gmail.com",
+		"picture": "https://lh3.googleusercontent.com/a-/AOh14Gj6ZsicV_DmZFzqYLqhMfPPGGysVQYpoG_eOVAa=s96-c"
+	},
+	"games": [
+		{
+			"userId": "103855466232680176573",
+			"date": "21/04/2021",
+			"contribution": "€5",
+			"rounds": "1 Round",
+			"club": "Dublin",
+			"id": 4
+		},
+		{
+			"userId": "103855466232680176573",
+			"date": "28/04/2021",
+			"contribution": "€10",
+			"rounds": "2 Rounds",
+			"club": "Dublin",
+			"id": 5
+		},
+		{
+			"userId": "107426908509768612897",
+			"date": "21/04/2021",
+			"contribution": "&euro;0",
+			"rounds": "All Rounds",
+			"club": "Random",
+			"id": 6
+		},
+		{
+			"userId": "103855466232680176573",
+			"date": "21/04/2021",
+			"contribution": "&euro;0",
+			"rounds": "All Rounds",
+			"club": "Random",
+			"id": 7
+		},
+		{
+			"userId": "10158696176881858",
+			"date": "21/04/2021",
+			"contribution": "&euro;0",
+			"rounds": "All Rounds",
+			"club": "Random",
+			"id": 8
+		},
+		{
+			"userId": "111832488900687046282",
+			"date": "21/04/2021",
+			"contribution": "&euro;0",
+			"rounds": "All Rounds",
+			"club": "Random",
+			"id": 9
+		}
+	],
+	"scores": [
+		{
+			"id": 1,
+			"name": "John",
+			"tricks": 5,
+			"games": 1
+		},
+		{
+			"id": 2,
+			"name": "Mary",
+			"tricks": 10,
+			"games": 0
+		},
+		{
+			"id": 3,
+			"name": "Liz",
+			"tricks": 5,
+			"games": 0
+		},
+		{
+			"id": 4,
+			"name": "Frank",
+			"tricks": 15,
+			"games": 1
+		}
+	],
+	"allScores": [
+		{
+			"id": 1,
+			"name": "John O'Connor",
+			"games": 3,
+			"tricks": 15,
+			"seasonScore": 5563,
+			"winnings": "&euro;15"
+		},
+		{
+			"id": 2,
+			"name": "Liz Murphy",
+			"games": 2,
+			"tricks": 15,
+			"seasonScore": 4956,
+			"winnings": "&euro;10"
+		},
+		{
+			"id": 3,
+			"name": "Frank Kelly",
+			"games": 2,
+			"tricks": 10,
+			"seasonScore": 4436,
+			"winnings": "&euro;10"
+		},
+		{
+			"id": 4,
+			"name": "Anne McAdam",
+			"games": 1,
+			"tricks": 10,
+			"seasonScore": 3999,
+			"winnings": "&euro;5"
+		},
+		{
+			"id": 5,
+			"name": "John Murphy",
+			"games": 1,
+			"tricks": 10,
+			"seasonScore": 3998,
+			"winnings": "&euro;5"
+		},
+		{
+			"id": 6,
+			"name": "Mary Brennan",
+			"games": 0,
+			"tricks": 10,
+			"seasonScore": 2885,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 7,
+			"name": "Paul Connol",
+			"games": 0,
+			"tricks": 5,
+			"seasonScore": 2000,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 8,
+			"name": "Steven Francis",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 9,
+			"name": "James Kelly",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 10,
+			"name": "Frank Johnson",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 11,
+			"name": "Michael Thompson",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 12,
+			"name": "Steven Madden",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 13,
+			"name": "Jill Jackson",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 14,
+			"name": "Kate Flemming",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 15,
+			"name": "Lisa Donaldson",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 16,
+			"name": "Rachel O'Leary",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 17,
+			"name": "Eamonn Jawhary",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 18,
+			"name": "Captain Sanders",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 19,
+			"name": "Ronald McDonnald",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		},
+		{
+			"id": 20,
+			"name": "Frank Williams",
+			"games": 0,
+			"tricks": 0,
+			"seasonScore": 500,
+			"winnings": "&euro;0"
+		}
+	]
 }
