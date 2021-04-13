@@ -18,7 +18,7 @@ const Scoreboard = () => {
 		getUser();
 		getAllScores();
 		// eslint-disable-next-line
-	}, []);
+	}, [authLoading]);
 
 	return (
 		<>
