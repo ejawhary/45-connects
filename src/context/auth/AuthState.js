@@ -26,7 +26,7 @@ const AuthState = (props) => {
 
 		if (localStorage.token) {
 			try {
-				const res = await axios.get('https://123.com:5000/auth');
+				const res = await axios.get('https://45connects.xyz:5000/auth');
 				dispatch({
 					type: GET_USER,
 					payload: res.data,
@@ -43,7 +43,7 @@ const AuthState = (props) => {
 
 		try {
 			const res = await axios.put(
-				'https://123.com:5000/auth',
+				'https://45connects.xyz:5000/auth',
 				userDataObj,
 				config
 			);
