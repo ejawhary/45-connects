@@ -16,9 +16,11 @@ const Scoreboard = () => {
 
 	useEffect(() => {
 		getUser();
+
 		if (!authLoading) {
 			allScores();
 		}
+
 		// eslint-disable-next-line
 	}, [authLoading]);
 
