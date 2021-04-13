@@ -13,7 +13,7 @@ import {
 
 const GamesState = (props) => {
 	const initialState = {
-		gamesData: null,
+		gamesData: [],
 		gamesLoading: false,
 		scores: null,
 		allScores: null,
