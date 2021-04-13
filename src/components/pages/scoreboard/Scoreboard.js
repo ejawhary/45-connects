@@ -12,10 +12,11 @@ const Scoreboard = () => {
 	const authContext = useContext(AuthContext);
 	const { getUser, authLoading } = authContext;
 	const gamesContext = useContext(GamesContext);
-	const { gamesLoading } = gamesContext;
+	const { gamesLoading, getAllScores, allScores } = gamesContext;
 
 	useEffect(() => {
 		getUser();
+		getAllScores();
 		// eslint-disable-next-line
 	}, []);
 
@@ -27,20 +28,21 @@ const Scoreboard = () => {
 					<h1>SCOREBOARD</h1>
 					<div className="final-scores">
 						<ScoreBoardTitles />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
-						<ScoreBoardItem />
+						{!gamesLoading && allScores !== null ? (
+							gamesData.map((game) => (
+								<ScoreBoardItem
+									key={allScores.id}
+									position={allScores.id + 1}
+									name={allScores.name}
+									games={allScores.games}
+									tricks={allScores.ticks}
+									seasonScore={allScores.seasonScore}
+									winnings={allScores.winnings}
+								/>
+							))
+						) : (
+							<Spinner />
+						)}
 					</div>
 				</div>
 			) : (
