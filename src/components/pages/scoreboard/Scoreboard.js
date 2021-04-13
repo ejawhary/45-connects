@@ -16,7 +16,9 @@ const Scoreboard = () => {
 
 	useEffect(() => {
 		getUser();
-		getAllScores();
+		if (!authLoading) {
+			allScores();
+		}
 		// eslint-disable-next-line
 	}, [authLoading]);
 
@@ -29,15 +31,15 @@ const Scoreboard = () => {
 					<div className="final-scores">
 						<ScoreBoardTitles />
 						{!gamesLoading && allScores !== null ? (
-							allScores.map((game) => (
+							allScores.map((player) => (
 								<ScoreBoardItem
-									key={allScores.id}
-									position={allScores.id + 1}
-									name={allScores.name}
-									games={allScores.games}
-									tricks={allScores.ticks}
-									seasonScore={allScores.seasonScore}
-									winnings={allScores.winnings}
+									key={player.id}
+									position={player.id + 1}
+									name={player.name}
+									games={player.games}
+									tricks={player.ticks}
+									seasonScore={player.seasonScore}
+									winnings={player.winnings}
 								/>
 							))
 						) : (

@@ -33,7 +33,7 @@
 
 		// Titles
 		.score-item-titles {
-			position: absolute;
+			position: fixed;
 			top: 0;
 			left: calc(50% - 45%);
 			background-color: $creme;
